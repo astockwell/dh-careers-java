@@ -7,6 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64_vmware.box"
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.vm.network :forwarded_port, guest: 9000, host: 9000
   config.vm.network :forwarded_port, guest: 27017, host: 27017
   # config.vm.provision :shell, :inline => $script
@@ -21,7 +22,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 # Configure apt for java
 # http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
 apt-get update
-apt-get install -y python-software-properties
+apt-get install -y curl wget python-software-properties
 add-apt-repository -y ppa:webupd8team/java
 echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 
