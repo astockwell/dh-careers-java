@@ -18,21 +18,18 @@ import java.util.regex.*;
 public class Application extends Controller {
 
     public static Result index() throws IOException {
-        // return ok(index.render("Your new application is ready."));
-        // return ok("Hello World");
-
-        Document doc = Jsoup.connect("http://en.wikipedia.org").get();
+        Document doc = Jsoup.connect("http://dignityhealth.org/careers/jobs/index.php?do=search&category=Information+Technology+%28IT%29&location=").get();
         String html = doc.html();
 
-        // via http://stackoverflow.com/questions/4829627/search-strings-in-a-multi-line-string-with-regex-and-java
-        Pattern p = Pattern.compile("var tblDataRows= (.*)", Pattern.MULTILINE|Pattern.DOTALL);
-        String result = "nothing";
-        Matcher regexMatcher = p.matcher(html);
-        while (regexMatcher.find() ) {
-            result += regexMatcher.group(1);
+        Pattern pattern = Pattern.compile("(var tblDataRows.*)");
+        String resultString = "initial";
+        Matcher regexMatcher = pattern.matcher( html );
+        while (regexMatcher.find()) {
+            resultString = regexMatcher.group(1);
         }
 
-        return ok(result);
+        // return ok(resultString);
+        return ok(index.render(resultString));
     }
 
 }
