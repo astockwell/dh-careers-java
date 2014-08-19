@@ -10,3 +10,5 @@ Downloads the [jobs manifest](http://dignityhealth.org/careers/jobs/index.php?do
 1. Run `vagrant up`
 2. Run `make`
 3. Visit `localhost:9000`
+
+Or just visit [astockwell.github.io/dh-careers-java](http://astockwell.github.io/dh-careers-java)
