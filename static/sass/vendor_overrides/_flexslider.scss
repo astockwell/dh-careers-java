@@ -1,0 +1,67 @@
+/* Flexslider Overrides */
+.flexslider {
+	&, * {
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+	background: transparent;
+	border: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	margin: 0;
+	z-index: 0;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-bottom: 0;
+
+		& > li {
+			//** If you're having issues with text aliasing cross-browser, try
+			//** removing this declaration, but watch out for bouncing slide images!
+			-webkit-backface-visibility: visible;
+		}
+	}
+	.flex-direction-nav a {
+		// $sprite-height: 35px;
+		// $sprite-width: 18px;
+		// $padding: 10px;
+
+		// background: transparent url('../img/arrows.png') no-repeat 0 0;
+		// width: $sprite-width;
+		// height: $sprite-height;
+		// padding: $padding;
+
+		// &:hover, &:active {
+		// 	opacity: 1;
+		// }
+
+		// &.flex-prev {
+		// 	background-position: $padding $padding;
+		// 	// &:hover, &:active {
+		// 	// 	background-position: -$sprite-width $padding;
+		// 	// }
+		// }
+		// &.flex-next {
+		// 	background-position: $padding -$sprite-height;
+		// 	// &:hover, &:active {
+		// 	// 	background-position: -$sprite-width -$sprite-height;
+		// 	// }
+		// }
+
+		&:before {
+			content: "";
+			display: none;
+		}
+		&.flex-disabled {
+			visibility: hidden;
+		}
+	}
+}

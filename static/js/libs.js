@@ -1,0 +1,6 @@
+// @codekit-prepend "../bower_components/jquery/dist/jquery.js"
+// @codekit-prepend "../bower_components/bootstrap/dist/js/bootstrap.js"
+// @codekit-prepend "../bower_components/velocity/jquery.velocity.js"
+// @codekit-prepend "../bower_components/velocity/velocity.ui.js"
+// @codekit-prepend "libs/react-with-addons-0.11.1.min.js"
+// @codekit-prepend "libs/reactable.js"
