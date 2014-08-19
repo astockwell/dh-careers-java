@@ -28,7 +28,6 @@ public class Application extends Controller {
             resultString = regexMatcher.group(1);
         }
 
-        // return ok(resultString);
         return ok(index.render(resultString));
     }
 
