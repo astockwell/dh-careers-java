@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.vm.network :forwarded_port, guest: 9000, host: 9000
   config.vm.network :forwarded_port, guest: 27017, host: 27017
-  # config.vm.provision :shell, :inline => $script
+  config.vm.provision :shell, :inline => $script
 end
 
 $script = <<SCRIPT
